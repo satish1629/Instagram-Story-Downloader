@@ -1,0 +1,77 @@
+
+/* Smooth gradient background with animation */
+body {
+    background: linear-gradient(135deg, #f6d365, #fda085, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Smooth card hover effect */
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    color: #6a11cb;  /* Purple heading */
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    height: 50px;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: #6a11cb;  /* Purple button */
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #2575fc;  /* Blue hover effect */
+    transform: translateY(-3px);
+}
+
+.list-group-item {
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background: #f1f1f1;  /* Subtle hover effect */
+    transform: translateX(5px);
+}
+
+.btn-success {
+    background: #4caf50;  /* Green button */
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background: #388e3c;  /* Darker green hover */
+    transform: translateY(-3px);
+}

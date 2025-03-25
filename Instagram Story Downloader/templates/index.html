@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_animated.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Instagram Story Downloader</h1>
+
+    <form method="POST" action="/" class="my-4">
+        <div class="input-group">
+            <input type="text" name="username" class="form-control" placeholder="Enter Instagram username or URL" required>
+            <button type="submit" class="btn btn-primary">Download Stories</button>
+        </div>
+    </form>
+
+    {% if stories %}
+        <div class="stories mt-4">
+            <h3>Stories:</h3>
+            <div class="list-group">
+                {% for story in stories %}
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="{{ story }}" target="_blank">View Story</a>
+                        <a href="{{ url_for('download', url=story) }}" class="btn btn-success btn-sm">Download</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+<!-- Include the JavaScript -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
